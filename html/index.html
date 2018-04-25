@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="../css/style.css" />
+
+        <title>Pyramide Holographique</title>
+
+    </head>
+
+    <body>
+    	<br/><br/>
+    	<!--Pour les vidéos sans stream -->
+		<button id="btnLecture" type="button" class="btn btn-dark" onclick="lecture()">Lecture</button>
+		<br/><br/>
+		<button id="btnPause" type="btnPause" class="btn btn-dark" onclick="pause()">Pause</button>
+		<br/><br/>
+	    
+	   <video id="video_haut" width="30%" >
+		    <source src="../media/Saturn 2014 - C925 XLT - ZWO ASI 120MC.mp4" type="video/mp4" >
+		</video>
+		<video id="video_gauche" width="30%" >
+		    <source src="../media/Saturn 2014 - C925 XLT - ZWO ASI 120MC.mp4" type="video/mp4" >
+		</video>
+		<video id="video_bas" width="30%" >
+		    <source src="../media/Saturn 2014 - C925 XLT - ZWO ASI 120MC.mp4" type="video/mp4" >
+		</video>
+		<video id="video_droite" width="30%" >
+		    <source src="../media/Saturn 2014 - C925 XLT - ZWO ASI 120MC.mp4" type="video/mp4" >
+		</video>
+		
+	    <script type="text/javascript" src="../js/video.js"></script>
+	    <script type="text/javascript" src="../js/stream.js"></script>
+	    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<!--Pour le stream -->
+		<!--
+		 <script language="JavaScript">
+
+	    var output = test("video_haut_stream");
+	    document.write(output);
+
+	    var output = test("video_bas_stream");
+	    document.write(output);
+
+	    var output = test("video_gauche_stream");
+	    document.write(output);
+
+	    var output = test("video_droite_stream");
+	    document.write(output);
+
+	    document.Player.ToolbarConfiguration = "play,+snapshot,+fullscreen"
+	    // document.Player.UIMode = "MDConfig";
+	    // document.Player.MotionConfigURL = "/axis-cgi/operator/param.cgi?ImageSource=0"
+	    // document.Player.MotionDataURL = "/axis-cgi/motion/motiondata.cgi";
+	    </script>
+		-->
+	    
+	    
+    </body>
+
+   
+
+</html>
