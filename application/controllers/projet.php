@@ -28,6 +28,8 @@ class projet extends CI_Controller
     	$data = array();
     	$data['error'] = 0;
 
+        $data['page'] = "video";
+
 		$options = [
 		    'cost' => 11,
 		    'salt' => "zHnGog7TQAFtgHyJKVmQwO",
@@ -66,36 +68,71 @@ class projet extends CI_Controller
     public function projection()
     {
     	$data = array();
+
+        $data['page'] = "video";
+
+        $var_test = 0;
     	$extensions_photo= array( 'jpg' , 'jpeg' , 'gif' , 'png', 'bmp');
     	$extensions_video= array( 'mp4' , 'avi');
-		$data['filename'] = $_FILES['file']['name'];
-    	$extension = strtolower(  substr(  strrchr($_FILES['file']['name'], '.')  ,1)  );
-    	$data['destination'] =  $_SERVER["DOCUMENT_ROOT"].'/codeIgniter/assets/media/'.$_FILES['file']['name'];
-    	if (isset($_FILES['file']['tmp_name']))
-    	{
-    		move_uploaded_file($_FILES['file']['tmp_name'],$data['destination']);
-    	}
 
-		$this->load->view('header_projection');
-    	if(in_array($extension, $extensions_video))
+        if (isset($_FILES['file']['tmp_name']))
     	{
-	        $this->load->view('projection_video', $data);
-    	}
-    	elseif (in_array($extension, $extensions_photo))
-    	{
-       		$this->load->view('projection_photo', $data);
+            $data['filename'] = $_FILES['file']['name'];
+            $extension = strtolower(substr(strrchr( $data['filename'], '.')  ,1)  );
+            $data['destination'] =  $_SERVER["DOCUMENT_ROOT"].'/codeIgniter/assets/media/'. $data['filename'];
+    		move_uploaded_file( $data['filename'],$data['destination']);
+
+            $text_txt = fopen("text.txt", 'w+');
+            fseek($text_txt, 0);
+            fputs($text_txt,  $data['filename']);
+            fclose($text_txt);
+            $this->load->view('header_projection', $data);
+            $var_test = 1;
+            if(in_array($extension, $extensions_video))
+            {
+                $this->load->view('projection_video', $data);
+            }
+            elseif (in_array($extension, $extensions_photo))
+            {
+                $this->load->view('projection_photo', $data);
+            }
     	}
     }
     public function stream()
     {
-    	$this->load->view('header');
-        $this->load->view('stream');
+        $data = array();
 
+        $data['page'] = "home";
+
+    	$this->load->view('header_projection', $data);
+        $this->load->view('stream');
+    }
+    public function youtube()
+    {
+        $data = array();
+
+        $data['page'] = "youtube";
+
+        if (!isset($_POST['url_youtube']))
+        {
+            $this->load->view('header');
+            $this->load->view('youtube');
+        }
+        if (isset($_POST['url_youtube']))
+        {
+            $data['url_youtube'] = $_POST['url_youtube'];
+            $this->load->view('header_projection', $data);
+            $this->load->view('projection_youtube', $data);
+        }
     }
     public function vr()
     {
     	$this->load->view('header');
         $this->load->view('vr');
-
+    }
+    public function test()
+    {
+        $this->load->view('header');
+        $this->load->view('test');
     }
 }

@@ -25,20 +25,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		margin-top: 5%;
 		text-align: justify;
 	}
-	#btn_back
+	#btnBack
 	{
 		margin:1%;
-		position: absolute;
+		position: relative;
+	}
+	#btnLecture
+	{
+		margin:1%;
+		position: relative;
 	}
 	</style>
 </head>
 <body>
-<script type="text/javascript" src="../js/video.js"></script>
-<script type="text/javascript" src="../js/stream.js"></script>
+<script type="text/javascript" src=<?php echo '"'; echo base_url(); echo 'assets/js/video.js"'?>></script>
+<script type="text/javascript" src=<?php echo '"'; echo base_url(); echo 'assets/js/stream.js"'?>></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-<form id="btn_back" method="post" action=<?php echo '"'; echo base_url(); echo 'projet/home"'?>" enctype="multipart/form-data">
-  <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></button>
+<form id="btnBack" method="post" action=<?php echo '"'; echo base_url(); echo 'projet/'.$page.'"'?>" enctype="multipart/form-data">
+  <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span></button>
 </form>
