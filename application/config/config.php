@@ -1,8 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-$config['test1'] = 'wawawa';
-
 /*
 |--------------------------------------------------------------------------
 | Base Site URL

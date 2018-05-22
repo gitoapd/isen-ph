@@ -30,6 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 <script type="text/javascript" src=<?php echo '"'; echo base_url(); echo 'assets/js/video.js"'?>></script>
 <script type="text/javascript" src=<?php echo '"'; echo base_url(); echo 'assets/js/stream.js"'?>></script>
+<script type="text/javascript" src=<?php echo '"'; echo base_url(); echo 'assets/js/test.js"'?>></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -44,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <li><a href="http://localhost/codeIgniter/projet/youtube">Youtube</a></li>
       <li><a href="http://localhost/codeIgniter/projet/stream">Streaming</a></li>
       <li><a href="http://localhost/codeIgniter/projet/vr">Réalité Virtuelle</a></li>
-      <li><a href="http://localhost/codeIgniter/projet/test">test</a></li>
+      <!-- <li><a href="http://localhost/codeIgniter/projet/test">test</a></li> -->
     </ul>
   </div>
 </nav>
