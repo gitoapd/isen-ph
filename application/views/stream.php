@@ -2,10 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<script language="JavaScript">
-
-		var ip = <?php echo $webcamip ?>;
-		
+<script language="JavaScript">	
 	    var output = test("video_haut_stream");
 	    document.write(output);
 

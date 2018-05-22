@@ -107,7 +107,7 @@ class projet extends CI_Controller
         $data['page'] = "video";
         
         $extensions_photo= array( 'jpg' , 'jpeg' , 'gif' , 'png', 'bmp');
-        $extensions_video= array( 'mp4' , 'webm', 'ogg', 'avi');
+        $extensions_video= array( 'mp4' , 'webm', 'ogg');
 
         $text_txt = fopen("text.txt", 'r+');
         $data['filename'] = fgets($text_txt, 100);
