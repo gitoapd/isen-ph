@@ -37,39 +37,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <source src=<?php echo base_url(); echo "/assets/media/video.mp4"?> type="video/mp4"></video>
 */
 ?>
-<div id="conteneur">
-    <div class="ligne1"></div>
-    <div class="ligne1">
-    <video loop autoplay id="" width="100%">
-		<source src=<?php echo base_url(); echo "/assets/media/".$filename?> type="video/mp4">
-		<source src=<?php echo base_url(); echo "/assets/media/".$filename?> type="video/webm">
-		<source src=<?php echo base_url(); echo "/assets/media/".$filename?> type="video/ogg">
-	</video>
-	</div>
-    <div class="ligne1"></div>
-</div>
-<div id="conteneur">
-    <div class="ligne2">
-    <video loop autoplay id="v2" width="100%">
-		<source src=<?php echo base_url(); echo "/assets/media/".$filename?> type="video/mp4">
-		<source src=<?php echo base_url(); echo "/assets/media/".$filename?> type="video/webm">
-		<source src=<?php echo base_url(); echo "/assets/media/".$filename?> type="video/ogg">
-	</video></div>
-    <div class="ligne2"></div>
-    <div class="ligne2">
-    <video loop autoplay id="v3" width="100%">
-		<source src=<?php echo base_url(); echo "/assets/media/".$filename?> type="video/mp4">
-		<source src=<?php echo base_url(); echo "/assets/media/".$filename?> type="video/webm">
-		<source src=<?php echo base_url(); echo "/assets/media/".$filename?> type="video/ogg">
-	</video></div>
-</div>
-<div id="conteneur">
-    <div class="ligne3"></div>
-    <div class="ligne3">
-    <video loop autoplay id="v4" width="100%">
-		<source src=<?php echo base_url(); echo "/assets/media/".$filename?> type="video/mp4">
-		<source src=<?php echo base_url(); echo "/assets/media/".$filename?> type="video/webm">
-		<source src=<?php echo base_url(); echo "/assets/media/".$filename?> type="video/ogg">
-	</video></div>
-    <div class="ligne3"></div>
-</div>
+<h1>Pause / Play Buttons for YouTube Videos</h1>
+
+<!-- Make sure ?enablejsapi=1 is on URL -->
+<button id="play-video" href="#">Play Video</button>
+
+<iframe id="video" src="//www.youtube.com/embed/FKWwdQu6_ok?enablejsapi=1&html5=1" frameborder="0" allowfullscreen></iframe>
+<br />
+<script type="text/javascript">
+    $(document).ready(function() {
+  $('#play-video').on('click', function(ev) {
+ 
+    $("#video")[0].src += "&autoplay=1";
+    ev.preventDefault();
+ 
+  });
+});
+</script>

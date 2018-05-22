@@ -49,6 +49,7 @@ function test(Id_Video)
       return output;
 }
 
+
 function stream(PosX, PosY, ID_video)
 {
     // Set the BaseURL to the URL of your camera
