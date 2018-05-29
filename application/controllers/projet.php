@@ -36,7 +36,7 @@ class projet extends CI_Controller
 		];
 
 		/*CHANGEMENT DE MOT DE PASSE*/
-		//echo password_hash("motdepasse", PASSWORD_BCRYPT, $options);
+		//echo password_hash("", PASSWORD_BCRYPT, $options);
 		/****************************/
 
     	if (isset($_POST['psswd']))
@@ -78,7 +78,8 @@ class projet extends CI_Controller
         {
             $data['filename'] = $_FILES['file']['name'];
             $extension = strtolower(substr(strrchr( $data['filename'], '.')  ,1)  );
-            $data['destination'] =  $_SERVER["DOCUMENT_ROOT"].'/codeIgniter/assets/media/'.$_FILES['file']['name'];
+
+            $data['destination'] =  $_SERVER["DOCUMENT_ROOT"].'/pyramide/assets/media/'.$_FILES['file']['name'];
             $data['check'] = 0;
             if(in_array($extension, $extensions_video) || in_array($extension, $extensions_photo))
             {

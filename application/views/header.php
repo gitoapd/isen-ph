@@ -40,12 +40,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <a class="navbar-brand">Pyramide Holographique</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="http://localhost/codeIgniter/projet/home">Home</a></li>
-      <li><a href="http://localhost/codeIgniter/projet/video">Vidéo</a></li>
-      <li><a href="http://localhost/codeIgniter/projet/youtube">Youtube</a></li>
-      <li><a href="http://localhost/codeIgniter/projet/stream">Streaming</a></li>
-      <li><a href="http://localhost/codeIgniter/projet/vr">Réalité Virtuelle</a></li>
-      <!-- <li><a href="http://localhost/codeIgniter/projet/test">test</a></li> -->
+      <li><a href=<?php echo '"'; echo base_url(); echo 'projet/home"'?>>Home</a></li>
+      <li><a href=<?php echo '"'; echo base_url(); echo 'projet/video"'?>>Video</a></li>
+      <li><a href=<?php echo '"'; echo base_url(); echo 'projet/youtube"'?>>YouTube</a></li>
+      <li><a href=<?php echo '"'; echo base_url(); echo 'projet/stream"'?>>Streaming</a></li>
     </ul>
   </div>
 </nav>

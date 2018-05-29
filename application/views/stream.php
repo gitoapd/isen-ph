@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-<script language="JavaScript">	
+<script language="JavaScript">
 	    var output = test("video_haut_stream");
 	    document.write(output);
 
